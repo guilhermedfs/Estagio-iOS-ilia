@@ -43,13 +43,13 @@
 - Interface builder (exceto XIB's)
 - Git (exceto review)
 - Teste unitários (teoria, utilizando JUnit)
+- Delegate
+- Extensions
 
 ## O que falta estudar?
 
 - Error Handling
-- Delegate
 - Concurrency
-- Extensions
 - Nested Types
 - Type Casting
 - Generics
