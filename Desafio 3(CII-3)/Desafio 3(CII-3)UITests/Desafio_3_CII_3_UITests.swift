@@ -2,7 +2,7 @@
 //  Desafio_3_CII_3_UITests.swift
 //  Desafio 3(CII-3)UITests
 //
-//  Created by Guilherme Silva on 25/11/21.
+//  Created by Guilherme Silva on 26/11/21.
 //
 
 import XCTest
@@ -16,27 +16,83 @@ class Desafio_3_CII_3_UITests: XCTestCase {
         continueAfterFailure = false
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        XCUIApplication().launch()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    // Tests scrooling though the screen
+    func testScreenScroll() {
+        let verticalScrollBar5PagesCollectionView = XCUIApplication()/*@START_MENU_TOKEN@*/.collectionViews.containing(.other, identifier:"Vertical scroll bar, 5 pages").element/*[[".collectionViews.containing(.other, identifier:\"Horizontal scroll bar, 1 page\").element",".collectionViews.containing(.other, identifier:\"Vertical scroll bar, 5 pages\").element"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        verticalScrollBar5PagesCollectionView.swipeDown()
+        verticalScrollBar5PagesCollectionView.swipeUp()
     }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    
+    // Tests selecting a movie
+    func testSelectMovie() {
+        
         let app = XCUIApplication()
-        app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        app.collectionViews.cells.otherElements.containing(.staticText, identifier:"Venom: Let There Be Carnage").element.tap()
+        app.navigationBars["Desafio_3_CII_3_.MovieDetailsView"].buttons["Movies"].tap()
+    }
+    
+    // Tests navigating though pages
+    func testNavigateThoughPages() {
+                
+        let moviesNavigationBar = XCUIApplication().navigationBars["Movies"]
+        let nextButton = moviesNavigationBar.buttons["Next"]
+        nextButton.tap()
+        nextButton.tap()
+        nextButton.tap()
+        nextButton.tap()
+        
+        let previousButton = moviesNavigationBar.buttons["Previous"]
+        previousButton.tap()
+        previousButton.tap()
+        previousButton.tap()
+        previousButton.tap()
+        
+    }
+    
+    // Tests selecting a movie after navigating though pages
+    func testSelectAfterNavigating() {
+        
+        let app = XCUIApplication()
+        let moviesNavigationBar = app.navigationBars["Movies"]
+        let nextButton = moviesNavigationBar.buttons["Next"]
+        nextButton.tap()
+        nextButton.tap()
+        moviesNavigationBar.buttons["Previous"].tap()
+        
+        let cellsQuery = app.collectionViews.cells
+        cellsQuery.otherElements.containing(.staticText, identifier:"Demonic").element.swipeUp()
+        
+        let houseOfGucciElement = cellsQuery.otherElements.containing(.staticText, identifier:"House of Gucci").element
+        houseOfGucciElement.tap()
+        
+    }
+    
+    // This test select different movies after changing the screen
+    func testSelectingDifferentMovies() {
+        
+        let app = XCUIApplication()
+        let nextButton = app.navigationBars["Movies"].buttons["Next"]
+        nextButton.tap()
+        nextButton.tap()
+        nextButton.tap()
+        
+        let cellsQuery = app.collectionViews.cells
+        cellsQuery.otherElements.containing(.staticText, identifier:"Stand by Me Doraemon 2").element.tap()
+        
+        let moviesButton = app.navigationBars["Desafio_3_CII_3_.MovieDetailsView"].buttons["Movies"]
+        moviesButton.tap()
+        cellsQuery.otherElements.containing(.staticText, identifier:"Alvin and the Chipmunks").element.tap()
+        moviesButton.tap()
+        cellsQuery.otherElements.containing(.staticText, identifier:"Penguin Bloom").element.tap()
+        moviesButton.tap()
+        
+    }
+    
+    override func tearDown() {
+        
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
 }

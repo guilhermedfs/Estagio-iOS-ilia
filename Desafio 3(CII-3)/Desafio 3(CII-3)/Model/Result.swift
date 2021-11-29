@@ -1,39 +1,11 @@
-//
-//  Movies.swift
-//  Desafio 3(CII-3)
-//
-//  Created by Guilherme Silva on 25/11/21.
-//
-
 import Foundation
 
-// MARK: - Welcome
-class Movie: Codable {
-    let page: Int
-    let results: [Result]
-    let totalPages, totalResults: Int
-
-    enum CodingKeys: String, CodingKey {
-        case page, results
-        case totalPages = "total_pages"
-        case totalResults = "total_results"
-    }
-
-    init(page: Int, results: [Result], totalPages: Int, totalResults: Int) {
-        self.page = page
-        self.results = results
-        self.totalPages = totalPages
-        self.totalResults = totalResults
-    }
-}
-
-// MARK: - Result
 class Result: Codable {
     let adult: Bool
     let backdropPath: String
     let genreIDS: [Int]
     let id: Int
-    let originalLanguage: OriginalLanguage
+    let originalLanguage: String
     let originalTitle, overview: String
     let popularity: Double
     let posterPath, releaseDate, title: String
@@ -56,7 +28,7 @@ class Result: Codable {
         case voteCount = "vote_count"
     }
 
-    init(adult: Bool, backdropPath: String, genreIDS: [Int], id: Int, originalLanguage: OriginalLanguage, originalTitle: String, overview: String, popularity: Double, posterPath: String, releaseDate: String, title: String, video: Bool, voteAverage: Double, voteCount: Int) {
+    init(adult: Bool, backdropPath: String, genreIDS: [Int], id: Int, originalLanguage: String, originalTitle: String, overview: String, popularity: Double, posterPath: String, releaseDate: String, title: String, video: Bool, voteAverage: Double, voteCount: Int) {
         self.adult = adult
         self.backdropPath = backdropPath
         self.genreIDS = genreIDS
@@ -73,10 +45,3 @@ class Result: Codable {
         self.voteCount = voteCount
     }
 }
-
-enum OriginalLanguage: String, Codable {
-    case en = "en"
-    case pt = "pt"
-}
-
-

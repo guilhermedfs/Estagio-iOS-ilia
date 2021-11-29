@@ -11,7 +11,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var movieLabel: UILabel!
-    
+    let dataImage = MoviesAPI()
+
     func setup(with movie: String) {
         movieLabel.text = movie
     }
@@ -19,17 +20,10 @@ class MovieCollectionViewCell: UICollectionViewCell {
     func onBind(data: Result) {
         movieLabel.text = data.title
         
-        URLSession.shared.dataTask(with: URLRequest(url: URL(string: "https://image.tmdb.org/t/p/w342/\(data.posterPath)")!)) {
-            (data, res, error) in
-            
-            do{
-                let datas = try data
-                DispatchQueue.main.async {
-                    self.movieImageView.image = UIImage(data: datas!)
-                }
-            } catch {
-                print("error")
+        dataImage.loadImage(url: dataImage.setImageLink(url: data.posterPath)) { (data, error) in
+            if error == nil {
+                self.movieImageView.image = UIImage(data: data!)
             }
-        }.resume()
+        }
     }
 }
