@@ -20,7 +20,10 @@ class MovieCollectionViewCell: UICollectionViewCell {
     func onBind(data: Result) {
         movieLabel.text = data.title
         
-        dataImage.loadImage(url: dataImage.setImageLink(url: data.posterPath)) { (data, error) in
+        guard let imagePoster = data.posterPath else {
+            return
+        }
+        dataImage.loadImage(url: dataImage.setImageLink(url: imagePoster)) { (data, error) in
             if error == nil {
                 self.movieImageView.image = UIImage(data: data!)
             }

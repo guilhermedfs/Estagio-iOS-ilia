@@ -10,11 +10,12 @@ import UIKit
 class MoviesAPI {
     var storedMovies = [Result]()
     var page = 1
-    let maxPage = 5
+    let maxPage = 20
     var newIndex: Int = 0
+    let url = "https://api.themoviedb.org/3/movie/upcoming?api_key=0d959db44c2b30eb348d0dc5be5cc1ad&language=en-US&page="
 
-    func fetchData(completionHandler: @escaping (Error?) -> Void) {
-        URLSession.shared.dataTask(with: URLRequest(url: URL(string: "https://api.themoviedb.org/3/movie/upcoming?api_key=0d959db44c2b30eb348d0dc5be5cc1ad&language=en-US&page=\(page)")!)){
+    func fetchData(url: String, completionHandler: @escaping (Error?) -> Void) {
+        let task = URLSession.shared.dataTask(with: URLRequest(url: URL(string: "\(url)\(page)")!)){
             (urlData, req, error) in
             do{
                 let result = try JSONDecoder().decode(Movie.self, from: urlData!)
@@ -25,7 +26,8 @@ class MoviesAPI {
             }catch let jsonError as NSError{
                 print("error: \(jsonError.localizedDescription)")
             }
-        }.resume()
+        }
+        task.resume()
     }
     
     func setImageLink(url: String) -> String {

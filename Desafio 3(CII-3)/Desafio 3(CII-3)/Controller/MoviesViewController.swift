@@ -26,33 +26,30 @@ class MoviesViewController: UIViewController {
         moviesCollectionView.delegate = self
         moviesCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
         showPreviousButton()
-        
-        dataMovies.fetchData(completionHandler: { (error) in
-            // Do this when task has finished...
-            self.reloadData()
-        })
-        
+        fetchData()
     }
     
     func reloadData() {
         self.moviesCollectionView.reloadData()
+    }
+    func fetchData () {
+        dataMovies.fetchData(url: dataMovies.url, completionHandler: { (error) in
+            // Do this when task has finished...
+            self.reloadData()
+        })
     }
     
     @IBAction func previousButtonPressed(_ sender: UIButton) {
         dataMovies.page -= 1
         showPreviousButton()
         showNextButton()
-        dataMovies.fetchData { (error) in
-            self.reloadData()
-        }
+        fetchData()
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         dataMovies.page += 1
         showNextButton()
-        dataMovies.fetchData { (error) in
-            self.reloadData()
-        }
+        fetchData()
     }
     
     func showPreviousButton() {
