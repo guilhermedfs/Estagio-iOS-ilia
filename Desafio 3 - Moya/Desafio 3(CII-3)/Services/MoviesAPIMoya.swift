@@ -11,7 +11,6 @@ import Moya
 enum MovieAPI {
     case upcomingMovies(page: Int)
     case popularMovies(page: Int)
-    case imageLink(imageLink: String)
 }
 
 extension MovieAPI: TargetType {
@@ -23,16 +22,19 @@ extension MovieAPI: TargetType {
     var baseURL: URL {
         switch self {
         case .upcomingMovies:
-            return URL(string: "https://api.themoviedb.org/3/movie/upcoming")!
+            return URL(string: "https://api.themoviedb.org/3/")!
         case .popularMovies:
-            return URL(string: "https://api.themoviedb.org/3/movie/popular")!
-        case .imageLink(let link):
-            return URL(string: "https://image.tmdb.org/t/p/w342\(link)")!
+            return URL(string: "https://api.themoviedb.org/3/")!
         }
     }
     
     var path: String {
-        return ""
+        switch self {
+        case .upcomingMovies:
+            return "movie/upcoming"
+        case .popularMovies:
+            return "movie/popular"
+        }
     }
     
     var method: Moya.Method {
@@ -41,15 +43,13 @@ extension MovieAPI: TargetType {
             return .get
         case .popularMovies:
             return .get
-        case .imageLink:
-            return .get
         }
     }
         
     var sampleData: Data {
         switch self {
         case .upcomingMovies(page: _):
-            return Bundle.loadJSONFromBundle(bundle: Bundle.main, resourceName: "Resources/movies")
+            return Bundle.loadJSONFromBundle(bundle: Bundle.main, resourceName: "movies")
         default:
             return Data()
         }
@@ -64,7 +64,7 @@ extension MovieAPI: TargetType {
         case .upcomingMovies(let page):
             var parameters = [String:Any]()
             parameters["api_key"] = API_KEY
-            parameters["language"] = "pt-BR"
+            parameters["language"] = "en-US"
             parameters["page"] = "\(page)"
             return parameters
         case .popularMovies(let page):
@@ -73,17 +73,11 @@ extension MovieAPI: TargetType {
             parameters["language"] = "pt-BR"
             parameters["page"] = "\(page)"
             return parameters
-        case .imageLink(imageLink: _):
-            var parameters = [String:Any]()
-            parameters[""] = ""
-            return parameters
         }
     }
-    
     
     var headers: [String : String]? {
         return nil
     }
 }
-
 

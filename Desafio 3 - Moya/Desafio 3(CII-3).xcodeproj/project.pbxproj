@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		3F5542CE22422A58415A9877 /* Pods_Desafio_3_CII_3_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2BE68F49EEC186407AB59D /* Pods_Desafio_3_CII_3_.framework */; };
 		548CCC6CA90EC094DCCB2F8F /* Pods_Desafio_3_CII_3__Desafio_3_CII_3_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550BA99E30E844C55E5DA0BC /* Pods_Desafio_3_CII_3__Desafio_3_CII_3_UITests.framework */; };
+		7D676627275926AF0066CEC9 /* movies.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D676626275926AF0066CEC9 /* movies.json */; };
+		7D676629275935270066CEC9 /* ImagesAPIMoya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D676628275935270066CEC9 /* ImagesAPIMoya.swift */; };
+		7D67663127594E400066CEC9 /* APIModelFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D67663027594E400066CEC9 /* APIModelFunctionsTests.swift */; };
+		7D67663327594EDE0066CEC9 /* APIModelNetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D67663227594EDE0066CEC9 /* APIModelNetworkingTests.swift */; };
+		7D6766352759500A0066CEC9 /* StubedDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6766342759500A0066CEC9 /* StubedDataTests.swift */; };
+		7D676637275951140066CEC9 /* APIModelColorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D676636275951140066CEC9 /* APIModelColorsTests.swift */; };
+		7D676639275951BE0066CEC9 /* APIModelFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D676638275951BE0066CEC9 /* APIModelFormatter.swift */; };
 		BEB15AE6DF2562E21D6F2520 /* Pods_Desafio_3_CII_3_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8944B7E4AFBECA2E7B28FC4B /* Pods_Desafio_3_CII_3_Tests.framework */; };
 		CF06B91E27552FE0007BA01D /* MoviesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06B91D27552FE0007BA01D /* MoviesAPI.swift */; };
 		CF06B92327553CB0007BA01D /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06B92227553CB0007BA01D /* Dates.swift */; };
@@ -49,6 +56,13 @@
 		38427E1A7B998C8444A6974A /* Pods-Desafio 3(CII-3).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio 3(CII-3).debug.xcconfig"; path = "Target Support Files/Pods-Desafio 3(CII-3)/Pods-Desafio 3(CII-3).debug.xcconfig"; sourceTree = "<group>"; };
 		550BA99E30E844C55E5DA0BC /* Pods_Desafio_3_CII_3__Desafio_3_CII_3_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio_3_CII_3__Desafio_3_CII_3_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EA6007E9BD05F6F0589B959 /* Pods-Desafio 3(CII-3)Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio 3(CII-3)Tests.debug.xcconfig"; path = "Target Support Files/Pods-Desafio 3(CII-3)Tests/Pods-Desafio 3(CII-3)Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D676626275926AF0066CEC9 /* movies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movies.json; sourceTree = "<group>"; };
+		7D676628275935270066CEC9 /* ImagesAPIMoya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesAPIMoya.swift; sourceTree = "<group>"; };
+		7D67663027594E400066CEC9 /* APIModelFunctionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModelFunctionsTests.swift; sourceTree = "<group>"; };
+		7D67663227594EDE0066CEC9 /* APIModelNetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModelNetworkingTests.swift; sourceTree = "<group>"; };
+		7D6766342759500A0066CEC9 /* StubedDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubedDataTests.swift; sourceTree = "<group>"; };
+		7D676636275951140066CEC9 /* APIModelColorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModelColorsTests.swift; sourceTree = "<group>"; };
+		7D676638275951BE0066CEC9 /* APIModelFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModelFormatter.swift; sourceTree = "<group>"; };
 		7D8A1B0F8AD0E2A2513FECD8 /* Pods-Desafio 3(CII-3).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio 3(CII-3).release.xcconfig"; path = "Target Support Files/Pods-Desafio 3(CII-3)/Pods-Desafio 3(CII-3).release.xcconfig"; sourceTree = "<group>"; };
 		8944B7E4AFBECA2E7B28FC4B /* Pods_Desafio_3_CII_3_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio_3_CII_3_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F1220037E7053FDEF823B83 /* Pods-Desafio 3(CII-3)-Desafio 3(CII-3)UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio 3(CII-3)-Desafio 3(CII-3)UITests.debug.xcconfig"; path = "Target Support Files/Pods-Desafio 3(CII-3)-Desafio 3(CII-3)UITests/Pods-Desafio 3(CII-3)-Desafio 3(CII-3)UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,10 +131,89 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7D67662A27594B8E0066CEC9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CF0943EA275820F700395B9F /* BundleExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7D67662C27594CC00066CEC9 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				7D676626275926AF0066CEC9 /* movies.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		7D67662D27594CCB0066CEC9 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CF3E2C41274FFB21004CC4AF /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		7D67662E27594D7A0066CEC9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D67662F27594DA70066CEC9 /* Base */,
+				CF3E2C06274FF5E9004CC4AF /* AppDelegate.swift */,
+				CF3E2C08274FF5E9004CC4AF /* SceneDelegate.swift */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		7D67662F27594DA70066CEC9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CF3E2C11274FF5EA004CC4AF /* LaunchScreen.storyboard */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		7D67663A275952780066CEC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D67663027594E400066CEC9 /* APIModelFunctionsTests.swift */,
+				7D676636275951140066CEC9 /* APIModelColorsTests.swift */,
+				7D676638275951BE0066CEC9 /* APIModelFormatter.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7D67663B2759528A0066CEC9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7D67663227594EDE0066CEC9 /* APIModelNetworkingTests.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7D67663C275952970066CEC9 /* Stubed */ = {
+			isa = PBXGroup;
+			children = (
+				7D6766342759500A0066CEC9 /* StubedDataTests.swift */,
+			);
+			path = Stubed;
+			sourceTree = "<group>";
+		};
+		7D67663D275956320066CEC9 /* Movie Structure */ = {
+			isa = PBXGroup;
+			children = (
+				CF1EF04127515E13005783B5 /* Movie.swift */,
+				CF1EF04627515E29005783B5 /* Result.swift */,
+				CF06B92227553CB0007BA01D /* Dates.swift */,
+			);
+			path = "Movie Structure";
+			sourceTree = "<group>";
+		};
 		CF0943D027580B4400395B9F /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				CF0943D727580C9F00395B9F /* MoviesAPIMoya.swift */,
+				7D676628275935270066CEC9 /* ImagesAPIMoya.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -128,6 +221,8 @@
 		CF0943EF275821E600395B9F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7D67662D27594CCB0066CEC9 /* Assets */,
+				7D67662C27594CC00066CEC9 /* Mocks */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -144,8 +239,6 @@
 		CF3E2BFA274FF5E9004CC4AF = {
 			isa = PBXGroup;
 			children = (
-				CF0943EF275821E600395B9F /* Resources */,
-				CF3E2C41274FFB21004CC4AF /* Assets.xcassets */,
 				CF3E2C05274FF5E9004CC4AF /* Desafio 3(CII-3) */,
 				CF3E2C1C274FF5EA004CC4AF /* Desafio 3(CII-3)Tests */,
 				CF1EF035275155B9005783B5 /* Desafio 3(CII-3)UITests */,
@@ -168,13 +261,14 @@
 		CF3E2C05274FF5E9004CC4AF /* Desafio 3(CII-3) */ = {
 			isa = PBXGroup;
 			children = (
-				CF3E2C06274FF5E9004CC4AF /* AppDelegate.swift */,
-				CF3E2C08274FF5E9004CC4AF /* SceneDelegate.swift */,
+				7D67663D275956320066CEC9 /* Movie Structure */,
+				CF0943EF275821E600395B9F /* Resources */,
+				7D67662A27594B8E0066CEC9 /* Extensions */,
+				7D67662E27594D7A0066CEC9 /* Support Files */,
 				CF3E2C6327500B28004CC4AF /* Model */,
 				CF3E2C3A274FF612004CC4AF /* View */,
 				CF3E2C39274FF600004CC4AF /* Controller */,
 				CF0943D027580B4400395B9F /* Services */,
-				CF3E2C11274FF5EA004CC4AF /* LaunchScreen.storyboard */,
 				CF3E2C14274FF5EA004CC4AF /* Info.plist */,
 			);
 			path = "Desafio 3(CII-3)";
@@ -185,6 +279,9 @@
 			children = (
 				CF3E2C1D274FF5EA004CC4AF /* Desafio_3_CII_3_Tests.swift */,
 				CF3E2C1F274FF5EA004CC4AF /* Info.plist */,
+				7D67663A275952780066CEC9 /* Model */,
+				7D67663B2759528A0066CEC9 /* Networking */,
+				7D67663C275952970066CEC9 /* Stubed */,
 			);
 			path = "Desafio 3(CII-3)Tests";
 			sourceTree = "<group>";
@@ -210,11 +307,7 @@
 		CF3E2C6327500B28004CC4AF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CF1EF04127515E13005783B5 /* Movie.swift */,
-				CF1EF04627515E29005783B5 /* Result.swift */,
 				CF06B91D27552FE0007BA01D /* MoviesAPI.swift */,
-				CF06B92227553CB0007BA01D /* Dates.swift */,
-				CF0943EA275820F700395B9F /* BundleExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -349,6 +442,7 @@
 			files = (
 				CF3E2C13274FF5EA004CC4AF /* LaunchScreen.storyboard in Resources */,
 				CF3E2C42274FFB21004CC4AF /* Assets.xcassets in Resources */,
+				7D676627275926AF0066CEC9 /* movies.json in Resources */,
 				CF3E2C0E274FF5E9004CC4AF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D676629275935270066CEC9 /* ImagesAPIMoya.swift in Sources */,
 				CF3E2C4A274FFD9A004CC4AF /* MoviesViewController.swift in Sources */,
 				CF06B92327553CB0007BA01D /* Dates.swift in Sources */,
 				CF3E2C07274FF5E9004CC4AF /* AppDelegate.swift in Sources */,
@@ -496,7 +591,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D6766352759500A0066CEC9 /* StubedDataTests.swift in Sources */,
+				7D67663127594E400066CEC9 /* APIModelFunctionsTests.swift in Sources */,
+				7D676637275951140066CEC9 /* APIModelColorsTests.swift in Sources */,
+				7D676639275951BE0066CEC9 /* APIModelFormatter.swift in Sources */,
 				CF3E2C1E274FF5EA004CC4AF /* Desafio_3_CII_3_Tests.swift in Sources */,
+				7D67663327594EDE0066CEC9 /* APIModelNetworkingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

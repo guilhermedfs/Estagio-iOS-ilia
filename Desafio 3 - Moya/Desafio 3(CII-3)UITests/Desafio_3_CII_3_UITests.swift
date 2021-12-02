@@ -30,7 +30,10 @@ class Desafio_3_CII_3_UITests: XCTestCase {
     func testSelectMovie() {
         
         let app = XCUIApplication()
-        app.collectionViews.cells.otherElements.containing(.staticText, identifier:"Venom: Let There Be Carnage").element.tap()
+        let movie = app.collectionViews.children(matching:.any).element(boundBy: 2)
+        if movie.exists {
+             movie.tap()
+        }
         app.navigationBars["Desafio_3_CII_3_.MovieDetailsView"].buttons["Movies"].tap()
         
         app.terminate()
@@ -64,10 +67,14 @@ class Desafio_3_CII_3_UITests: XCTestCase {
         let nextButton = app.navigationBars["Movies"].buttons["Next"]
         nextButton.tap()
         nextButton.tap()
-        app.collectionViews.cells.otherElements.containing(.staticText, identifier:"Long Story Short").element.tap()
+        let movie = app.collectionViews.children(matching:.any).element(boundBy: 3)
+        if movie.exists {
+             movie.tap()
+        }
+        let moviesButton = app.navigationBars["Desafio_3_CII_3_.MovieDetailsView"].buttons["Movies"]
+        moviesButton.tap()
         
         app.terminate()
-        
     }
     
     // This test select different movies after changing the screen
@@ -79,16 +86,21 @@ class Desafio_3_CII_3_UITests: XCTestCase {
         nextButton.tap()
         nextButton.tap()
         
-        let cellsQuery = app.collectionViews.cells
-        cellsQuery.otherElements.containing(.staticText, identifier:"Stillwater").element.tap()
+        var movie = app.collectionViews.children(matching:.any).element(boundBy: 3)
+        if movie.exists {
+             movie.tap()
+        }
         
         let moviesButton = app.navigationBars["Desafio_3_CII_3_.MovieDetailsView"].buttons["Movies"]
         moviesButton.tap()
-        cellsQuery.otherElements.containing(.staticText, identifier:"Howl's Moving Castle").element.tap()
+        movie = app.collectionViews.children(matching:.any).element(boundBy: 6)
+        if movie.exists {
+             movie.tap()
+        }
         moviesButton.tap()
         
         app.terminate()
-        
+
     }
     
     override func tearDown() {

@@ -14,6 +14,7 @@ class MoviesAPI {
     let maxPage = 20
     var newIndex: Int = 0
     let movieProvider = MoyaProvider<MovieAPI>()
+    let imageProvider = MoyaProvider<ImagesAPI>()
     
     func fetchData(completionHandler: @escaping () -> Void) {
         movieProvider.request(.upcomingMovies(page: page)) { (result) in
@@ -38,7 +39,7 @@ class MoviesAPI {
     }
     
     func loadImage(url: String, completionHandler: @escaping (Data?) -> Void) {
-        movieProvider.request(.imageLink(imageLink: setImageLink(url: url))) {
+        imageProvider.request(.imageLink(imageLink: setImageLink(url: url))) {
             (result) in
             switch result {
             case .success(let response):

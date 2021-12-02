@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1240"
+   LastUpgradeVersion = "1310"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,7 +16,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CF3E2C23274FF5EA004CC4AF"
+               BlueprintIdentifier = "CF1EF033275155B9005783B5"
                BuildableName = "Desafio 3(CII-3)UITests.xctest"
                BlueprintName = "Desafio 3(CII-3)UITests"
                ReferencedContainer = "container:Desafio 3(CII-3).xcodeproj">
