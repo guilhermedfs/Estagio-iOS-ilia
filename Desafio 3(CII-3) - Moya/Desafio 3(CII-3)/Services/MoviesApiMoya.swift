@@ -47,12 +47,12 @@ extension MovieAPI: TargetType {
     }
         
     var sampleData: Data {
-       /* switch self {
+        switch self {
         case .upcomingMovies(page: _):
-            return 
-        
-        }*/
-        return Data()
+            return Bundle.loadJSONFromBundle(bundle: Bundle.main, resourceName: "Resources/movies")
+        default:
+            return Data()
+        }
     }
     
     var task: Task {
@@ -85,3 +85,5 @@ extension MovieAPI: TargetType {
         return nil
     }
 }
+
+

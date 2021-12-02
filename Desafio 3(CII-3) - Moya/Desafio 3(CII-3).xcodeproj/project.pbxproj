@@ -13,6 +13,7 @@
 		CF06B91E27552FE0007BA01D /* MoviesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06B91D27552FE0007BA01D /* MoviesAPI.swift */; };
 		CF06B92327553CB0007BA01D /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06B92227553CB0007BA01D /* Dates.swift */; };
 		CF0943D827580C9F00395B9F /* MoviesAPIMoya.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0943D727580C9F00395B9F /* MoviesAPIMoya.swift */; };
+		CF0943EB275820F700395B9F /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0943EA275820F700395B9F /* BundleExtension.swift */; };
 		CF1EF037275155B9005783B5 /* Desafio_3_CII_3_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1EF036275155B9005783B5 /* Desafio_3_CII_3_UITests.swift */; };
 		CF1EF04227515E13005783B5 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1EF04127515E13005783B5 /* Movie.swift */; };
 		CF1EF04727515E29005783B5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1EF04627515E29005783B5 /* Result.swift */; };
@@ -55,6 +56,7 @@
 		CF06B91D27552FE0007BA01D /* MoviesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAPI.swift; sourceTree = "<group>"; };
 		CF06B92227553CB0007BA01D /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
 		CF0943D727580C9F00395B9F /* MoviesAPIMoya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesAPIMoya.swift; sourceTree = "<group>"; };
+		CF0943EA275820F700395B9F /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		CF1EF034275155B9005783B5 /* Desafio 3(CII-3)UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Desafio 3(CII-3)UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF1EF036275155B9005783B5 /* Desafio_3_CII_3_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desafio_3_CII_3_UITests.swift; sourceTree = "<group>"; };
 		CF1EF038275155B9005783B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,6 +125,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		CF0943EF275821E600395B9F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		CF1EF035275155B9005783B5 /* Desafio 3(CII-3)UITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +144,7 @@
 		CF3E2BFA274FF5E9004CC4AF = {
 			isa = PBXGroup;
 			children = (
+				CF0943EF275821E600395B9F /* Resources */,
 				CF3E2C41274FFB21004CC4AF /* Assets.xcassets */,
 				CF3E2C05274FF5E9004CC4AF /* Desafio 3(CII-3) */,
 				CF3E2C1C274FF5EA004CC4AF /* Desafio 3(CII-3)Tests */,
@@ -204,6 +214,7 @@
 				CF1EF04627515E29005783B5 /* Result.swift */,
 				CF06B91D27552FE0007BA01D /* MoviesAPI.swift */,
 				CF06B92227553CB0007BA01D /* Dates.swift */,
+				CF0943EA275820F700395B9F /* BundleExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -477,6 +488,7 @@
 				CF1EF04227515E13005783B5 /* Movie.swift in Sources */,
 				CF1EF04727515E29005783B5 /* Result.swift in Sources */,
 				CF3E2C57275000D6004CC4AF /* MovieCollectionViewCell.swift in Sources */,
+				CF0943EB275820F700395B9F /* BundleExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

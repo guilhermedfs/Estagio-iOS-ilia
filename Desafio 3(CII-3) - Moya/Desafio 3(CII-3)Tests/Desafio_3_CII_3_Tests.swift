@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Moya
 @testable import Desafio_3_CII_3_
 
 class Desafio_3_CII_3_Tests: XCTestCase {
@@ -31,7 +32,7 @@ class Desafio_3_CII_3_Tests: XCTestCase {
         let getImageData = MoviesAPI()
         
         let expect = expectation(description: "test loading image")
-        getImageData.loadImage(url: "h5UzYZquMwO9FVn15R2eK2itmHu.jpg") { (data, error)  in
+        getImageData.loadImage(url: "h5UzYZquMwO9FVn15R2eK2itmHu.jpg") { (data)  in
             XCTAssertNotNil(data)
             expect.fulfill()
         }
@@ -43,8 +44,7 @@ class Desafio_3_CII_3_Tests: XCTestCase {
         let getData = MoviesAPI()
         
         let expectData = expectation(description: "Test loading data")
-        getData.fetchData(url: "https://api.themoviedb.org/3/movie/upcoming?api_key=0d959db44c2b30eb348d0dc5be5cc1ad&language=en-US&page=1") { (error) in
-            XCTAssertNil(error)
+        getData.fetchData{
             expectData.fulfill()
         }
         wait(for: [expectData], timeout: 5)
@@ -71,5 +71,19 @@ class Desafio_3_CII_3_Tests: XCTestCase {
         
         let result = selectData.setTextColor(average: 2.9)
         XCTAssertEqual(result, #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1))
+    }
+    
+    func testMockedData() {
+        let provider = MoyaProvider<MovieAPI>.init(stubClosure: MoyaProvider<MovieAPI>.immediatelyStub)
+        provider.request(.upcomingMovies(page: 1)) { (result) in
+            switch result {
+            case .success(let response):
+                let user = try! JSONDecoder().decode(Movie.self, from: response.data)
+                XCTAssertEqual(user.results[0].originalTitle, "Venom: Let There Be Carnage")
+                break
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
