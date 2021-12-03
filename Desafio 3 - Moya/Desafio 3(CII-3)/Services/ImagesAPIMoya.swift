@@ -16,14 +16,14 @@ extension ImagesAPI: TargetType {
     var baseURL: URL {
         switch self {
         case .imageLink:
-            return URL(string: "https://image.tmdb.org/")!
+            return URL(string: "https://image.tmdb.org/t/p/w342")!
         }
     }
     
     var path: String {
         switch self {
         case .imageLink(let link):
-            return "t/p/w342\(link)"
+            return "\(link)"
         }
     }
     
@@ -42,6 +42,4 @@ extension ImagesAPI: TargetType {
     var headers: [String : String]? {
         return nil
     }
-    
-    
 }
